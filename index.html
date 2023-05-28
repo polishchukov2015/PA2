@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <title>PA1</title>
+  <style>
+    body {
+      background-color: #EEEEEE;
+    }
+  </style>
+
+  <script src="./Utils/trackball-rotator.js"></script>
+  <script src="./Utils/m4.js"></script>
+  <script src="./shader.gpu"></script>
+  <script src="./main.js"></script>
+
+</head>
+
+<body onload="init()">
+  <div style="display: flex;">
+    <h2>Klein Bottle</h2>
+
+    <p id="message">Drag your mouse on the cube to rotate it.<br>
+      (On a touch screen, you can use your finger)</p>
+
+    <div>
+      <div>
+        <span>Eye separation</span>
+        <input id="eyes" type="range" min="0" max="200" step="1" value="60">
+        <span class="slider-value">0</span>
+      </div>
+      <div>
+        <span>Field of View</span>
+        <input id="fov" type="range" min="0" max="3.14" step="0.02" value="0.3">
+        <span class="slider-value">0</span>
+      </div>
+      <div>
+        <span>Near Clipping distance</span>
+        <input id="near" type="range" min="0" max="50" step="0.25" value="25">
+        <span class="slider-value">0</span>
+      </div>
+      <div>
+        <span>Convergence</span>
+        <input id="conv" type="range" min="100" max="5000" step="10" value="2500">
+        <span class="slider-value">0</span>
+      </div>
+    </div>
+  </div>
+  <button onclick="requestDeviceOrientation()"
+    style="width: 50vw; height:100px; margin:10px 10px 10px 10px; background-color: blue; color: white; border-radius: 10px; font-size:25px">Request
+    Sensor
+    Data</button>
+
+  <div id="canvas-holder">
+    <canvas width="600" height="600" id="webglcanvas" style="background-color:red"></canvas>
+  </div>
+
+
+</body>
+
+</html>
